@@ -1,0 +1,1099 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Will you be my valentine</title>
+
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="Will You Be My Valentine?" />
+    <meta
+      property="og:description"
+      content="I made something special for you this Valentine’s Day 💖 Click the link to see your surprise!"
+    />
+    <meta
+      property="og:image"
+      content="https://360invites.com/assets/img/valentine.png"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://360invites.com/my-valentine" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      h1,
+      .valentine-title {
+        font-family: "Pacifico", cursive;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          #ffd1dc 0%,
+          #ffb6c1 50%,
+          #ffc0cb 100%
+        );
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .container {
+        background: white;
+        border-radius: 30px;
+        padding: 50px 40px;
+        box-shadow: 0 20px 60px rgba(255, 105, 180, 0.3);
+        max-width: 450px;
+        width: 100%;
+        text-align: center;
+      }
+
+      .generator-section {
+        display: block;
+      }
+
+      .valentine-section {
+        display: none;
+      }
+
+      /* Cat Character - Cuter Version */
+      .cat-container {
+        position: relative;
+        margin: 0 auto 30px;
+        width: 180px;
+        height: 140px;
+      }
+
+      .cat-face {
+        width: 160px;
+        height: 130px;
+        background: #f4c5a3;
+        border-radius: 50% 50% 50% 50%;
+        position: relative;
+        margin: 0 auto;
+        box-shadow: 0 8px 20px rgba(244, 197, 163, 0.3);
+      }
+
+      .cat-ear-left,
+      .cat-ear-right {
+        width: 35px;
+        height: 35px;
+        background: #f4c5a3;
+        border-radius: 80% 0 50% 50%;
+        position: absolute;
+        top: -8px;
+      }
+
+      .cat-ear-left {
+        left: 20px;
+        transform: rotate(-40deg);
+      }
+
+      .cat-ear-right {
+        right: 20px;
+        transform: rotate(40deg) scaleX(-1);
+      }
+
+      .cat-eyes {
+        display: flex;
+        justify-content: center;
+        gap: 45px;
+        padding-top: 45px;
+      }
+
+      .cat-eye {
+        width: 14px;
+        height: 14px;
+        background: #000;
+        border-radius: 50%;
+      }
+
+      .cat-nose {
+        width: 12px;
+        height: 10px;
+        background: #ff6b9d;
+        border-radius: 50%;
+        margin: 12px auto 0;
+      }
+
+      .cat-blush-left,
+      .cat-blush-right {
+        width: 30px;
+        height: 18px;
+        background: #f5b5a0;
+        border-radius: 50%;
+        position: absolute;
+        top: 58px;
+        opacity: 0.7;
+      }
+
+      .cat-blush-left {
+        left: 15px;
+      }
+
+      .cat-blush-right {
+        right: 15px;
+      }
+
+      .heart-decoration {
+        position: absolute;
+        top: -5px;
+        right: 0px;
+        font-size: 50px;
+        animation: float 3s ease-in-out infinite;
+        filter: drop-shadow(0 4px 8px rgba(255, 107, 157, 0.3));
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(-5deg);
+        }
+
+        50% {
+          transform: translateY(-8px) rotate(5deg);
+        }
+      }
+
+      h1 {
+        color: #333;
+        margin-bottom: 10px;
+        text-align: center;
+        font-size: 26px;
+      }
+
+      .subtitle {
+        text-align: center;
+        color: #ff69b4;
+        margin-bottom: 30px;
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        color: #555;
+        font-weight: 600;
+        font-size: 14px;
+        text-align: left;
+      }
+
+      input {
+        width: 100%;
+        padding: 14px 18px;
+        border: 2px solid #ffc0cb;
+        border-radius: 15px;
+        font-size: 16px;
+        transition: all 0.3s;
+        background: #fff8fa;
+      }
+
+      input:focus {
+        outline: none;
+        border-color: #ff69b4;
+        box-shadow: 0 0 0 4px rgba(255, 105, 180, 0.1);
+        background: white;
+      }
+
+      .btn {
+        width: 100%;
+        padding: 16px;
+        background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+        color: white;
+        border: none;
+        border-radius: 15px;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+        margin-top: 10px;
+        box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(255, 105, 180, 0.4);
+      }
+
+      .btn:active {
+        transform: translateY(0);
+      }
+
+      .generated-link {
+        display: none;
+        margin-top: 30px;
+        padding: 25px;
+        background: linear-gradient(135deg, #fff8fa 0%, #ffe4e9 100%);
+        border-radius: 15px;
+        border: 2px solid #ffc0cb;
+      }
+
+      .link-container {
+        background: white;
+        padding: 14px;
+        border-radius: 10px;
+        word-break: break-all;
+        margin: 15px 0;
+        font-size: 13px;
+        color: #ff1493;
+        border: 1px solid #ffc0cb;
+      }
+
+      .copy-btn {
+        background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+        margin-top: 10px;
+      }
+
+      /* Valentine Popup Styles */
+      .valentine-content {
+        text-align: center;
+      }
+
+      .valentine-title {
+        font-size: 28px;
+        color: #000;
+        margin-bottom: 40px;
+        font-weight: 700;
+        line-height: 1.4;
+      }
+
+      .button-container {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        min-height: 80px;
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+
+      .valentine-btn {
+        padding: 16px 50px;
+        font-size: 18px;
+        font-weight: 700;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.3s;
+        min-width: 120px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .yes-btn {
+        background: #ff1493;
+        color: white;
+        position: relative;
+        z-index: 1;
+      }
+
+      .yes-btn:hover {
+        background: #ff69b4;
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(255, 20, 147, 0.3);
+      }
+
+      .no-btn {
+        background: #e8e8e8;
+        color: #666;
+        position: relative;
+        z-index: 1;
+      }
+
+      .no-btn:hover {
+        background: #d0d0d0;
+      }
+
+      .no-btn.moving {
+        position: fixed;
+        transition: all 0.2s ease-out;
+      }
+
+      .shy-message {
+        font-size: 14px;
+        color: #666;
+        margin-top: 10px;
+      }
+
+      .credit-message {
+        font-size: 14px;
+        color: #ff69b4;
+        margin-top: 10px;
+      }
+
+      .credit-color {
+        color: #667eea;
+      }
+
+      .success-message {
+        display: none;
+        text-align: center;
+        position: relative;
+      }
+
+      /* Glitter Shower Animation */
+      .glitter-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        pointer-events: none;
+        z-index: 10;
+      }
+
+      .glitter {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background: linear-gradient(45deg, #ffd700, #ffed4e, #ffd700);
+        border-radius: 50%;
+        animation: fall linear infinite;
+        opacity: 0;
+        box-shadow: 0 0 10px #ffd700;
+      }
+
+      @keyframes fall {
+        0% {
+          opacity: 0;
+          transform: translateY(-10px) rotate(0deg);
+        }
+
+        10% {
+          opacity: 1;
+        }
+
+        90% {
+          opacity: 1;
+        }
+
+        100% {
+          opacity: 0;
+          transform: translateY(500px) rotate(360deg);
+        }
+      }
+
+      /* Generate multiple glitter particles */
+      .glitter:nth-child(1) {
+        left: 10%;
+        animation-duration: 3s;
+        animation-delay: 0s;
+      }
+
+      .glitter:nth-child(2) {
+        left: 20%;
+        animation-duration: 3.5s;
+        animation-delay: 0.2s;
+        background: linear-gradient(45deg, #ff69b4, #ff1493);
+        box-shadow: 0 0 10px #ff69b4;
+      }
+
+      .glitter:nth-child(3) {
+        left: 30%;
+        animation-duration: 2.8s;
+        animation-delay: 0.4s;
+      }
+
+      .glitter:nth-child(4) {
+        left: 40%;
+        animation-duration: 3.2s;
+        animation-delay: 0.1s;
+        background: linear-gradient(45deg, #ff69b4, #ff1493);
+        box-shadow: 0 0 10px #ff69b4;
+      }
+
+      .glitter:nth-child(5) {
+        left: 50%;
+        animation-duration: 3s;
+        animation-delay: 0.3s;
+      }
+
+      .glitter:nth-child(6) {
+        left: 60%;
+        animation-duration: 3.3s;
+        animation-delay: 0.5s;
+        background: linear-gradient(45deg, #ff69b4, #ff1493);
+        box-shadow: 0 0 10px #ff69b4;
+      }
+
+      .glitter:nth-child(7) {
+        left: 70%;
+        animation-duration: 2.9s;
+        animation-delay: 0.2s;
+      }
+
+      .glitter:nth-child(8) {
+        left: 80%;
+        animation-duration: 3.1s;
+        animation-delay: 0.4s;
+        background: linear-gradient(45deg, #ff69b4, #ff1493);
+        box-shadow: 0 0 10px #ff69b4;
+      }
+
+      .glitter:nth-child(9) {
+        left: 90%;
+        animation-duration: 3.4s;
+        animation-delay: 0.1s;
+      }
+
+      .glitter:nth-child(10) {
+        left: 15%;
+        animation-duration: 2.7s;
+        animation-delay: 0.6s;
+        background: linear-gradient(45deg, #ff69b4, #ff1493);
+        box-shadow: 0 0 10px #ff69b4;
+      }
+
+      .glitter:nth-child(11) {
+        left: 25%;
+        animation-duration: 3s;
+        animation-delay: 0.3s;
+      }
+
+      .glitter:nth-child(12) {
+        left: 35%;
+        animation-duration: 3.2s;
+        animation-delay: 0.5s;
+        background: linear-gradient(45deg, #ff69b4, #ff1493);
+        box-shadow: 0 0 10px #ff69b4;
+      }
+
+      .glitter:nth-child(13) {
+        left: 45%;
+        animation-duration: 2.8s;
+        animation-delay: 0.2s;
+      }
+
+      .glitter:nth-child(14) {
+        left: 55%;
+        animation-duration: 3.3s;
+        animation-delay: 0.4s;
+        background: linear-gradient(45deg, #ff69b4, #ff1493);
+        box-shadow: 0 0 10px #ff69b4;
+      }
+
+      .glitter:nth-child(15) {
+        left: 65%;
+        animation-duration: 3.1s;
+        animation-delay: 0.1s;
+      }
+
+      .glitter:nth-child(16) {
+        left: 75%;
+        animation-duration: 2.9s;
+        animation-delay: 0.5s;
+        background: linear-gradient(45deg, #ff69b4, #ff1493);
+        box-shadow: 0 0 10px #ff69b4;
+      }
+
+      .glitter:nth-child(17) {
+        left: 85%;
+        animation-duration: 3.2s;
+        animation-delay: 0.3s;
+      }
+
+      .glitter:nth-child(18) {
+        left: 95%;
+        animation-duration: 3s;
+        animation-delay: 0.2s;
+        background: linear-gradient(45deg, #ff69b4, #ff1493);
+        box-shadow: 0 0 10px #ff69b4;
+      }
+
+      .glitter:nth-child(19) {
+        left: 5%;
+        animation-duration: 2.8s;
+        animation-delay: 0.4s;
+      }
+
+      .glitter:nth-child(20) {
+        left: 50%;
+        animation-duration: 3.1s;
+        animation-delay: 0.6s;
+        background: linear-gradient(45deg, #ff69b4, #ff1493);
+        box-shadow: 0 0 10px #ff69b4;
+      }
+
+      /* GIPHY Sticker Animation */
+      .kissing-animation {
+        width: 280px;
+        height: 280px;
+        margin: 30px auto;
+        display: none;
+        animation: fadeInScale 0.6s ease-in;
+      }
+
+      @keyframes fadeInScale {
+        from {
+          opacity: 0;
+          transform: scale(0.5);
+        }
+
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .kissing-animation img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .success-text {
+        font-size: 32px;
+        color: #ff1493;
+        font-weight: 700;
+        margin-bottom: 15px;
+      }
+
+      .success-subtitle {
+        font-size: 18px;
+        color: #666;
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          padding: 40px 25px;
+        }
+
+        h1 {
+          font-size: 22px;
+        }
+
+        .valentine-title {
+          font-size: 24px;
+        }
+
+        .cat-container {
+          width: 130px;
+          height: 130px;
+        }
+
+        .cat-face {
+          width: 130px;
+          height: 105px;
+        }
+      }
+
+      body {
+        background: linear-gradient(270deg, #ffd1dc, #ffb6c1, #ffc0cb, #ff9aa2);
+        background-size: 600% 600%;
+        animation: gradientMove 12s ease infinite;
+      }
+
+      @keyframes gradientMove {
+        0% {
+          background-position: 0% 50%;
+        }
+
+        50% {
+          background-position: 100% 50%;
+        }
+
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .floating-heart {
+        position: fixed;
+        bottom: -20px;
+        font-size: 22px;
+        animation: floatUp 6s linear infinite;
+        opacity: 0.8;
+      }
+
+      @keyframes floatUp {
+        from {
+          transform: translateY(0) scale(1);
+          opacity: 1;
+        }
+
+        to {
+          transform: translateY(-120vh) scale(1.6);
+          opacity: 0;
+        }
+      }
+
+      .container {
+        animation: popIn 0.8s ease;
+      }
+
+      @keyframes popIn {
+        from {
+          transform: scale(0.8);
+          opacity: 0;
+        }
+
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      .yes-btn {
+        animation: pulse 1.5s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(255, 20, 147, 0.6);
+        }
+
+        70% {
+          box-shadow: 0 0 0 18px rgba(255, 20, 147, 0);
+        }
+
+        100% {
+          box-shadow: 0 0 0 0 rgba(255, 20, 147, 0);
+        }
+      }
+
+      .success-message {
+        animation: bounceIn 0.8s ease;
+      }
+
+      @keyframes bounceIn {
+        0% {
+          transform: scale(0.5);
+          opacity: 0;
+        }
+
+        60% {
+          transform: scale(1.1);
+        }
+
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      /* Footer */
+
+      .app-footer {
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px dashed #ffc0cb;
+        text-align: center;
+      }
+
+      .powered-text {
+        font-size: 13px;
+        color: #888;
+        margin-bottom: 12px;
+      }
+
+      .brand {
+        color: #ff1493;
+        font-weight: 700;
+      }
+
+      .wedding-btn {
+        display: inline-block;
+        padding: 10px 22px;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        border-radius: 20px;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 600;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+      }
+
+      .wedding-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 18px rgba(102, 126, 234, 0.6);
+      }
+      .powered-inline {
+        display: flex;
+        align-items: center; /* vertical center */
+        justify-content: center; /* horizontal center */
+        gap: 8px; /* space between text and image */
+      }
+      .button-row {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        margin-top: 15px;
+      }
+
+      .whatsapp-btn {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        background-color: #25d366;
+        color: white;
+        text-decoration: none;
+        padding: 12px 20px;
+        border-radius: 15px;
+        font-weight: 700;
+        font-size: 17px;
+        box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+      }
+
+      .whatsapp-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 18px rgba(37, 211, 102, 0.6);
+      }
+
+      .whatsapp-icon {
+        width: 18px;
+        height: 18px;
+      }
+    </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- Link Generator Section -->
+      <div class="generator-section" id="generatorSection">
+        <h1>💝 Valentine Link Generator</h1>
+        <p class="subtitle">Create personalized Valentine's Day proposals!</p>
+
+        <form id="linkForm">
+          <div class="form-group">
+            <label for="fromName">Your Name:</label>
+            <input
+              type="text"
+              id="fromName"
+              placeholder="e.g., John"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="toName">Valentine Name:</label>
+            <input type="text" id="toName" placeholder="e.g., Sarah" required />
+          </div>
+
+          <button type="submit" class="btn">✨ Generate Link</button>
+        </form>
+
+        <div class="generated-link" id="generatedLink">
+          <h3 style="color: #667eea; margin-bottom: 10px">
+            🎉 Your Link is Ready!
+          </h3>
+          <div class="link-container" id="linkDisplay"></div>
+          {{--
+          <button class="btn copy-btn" id="copyBtn">📋 Copy Link</button> --}}
+          <div class="button-row">
+            <button class="btn copy-btn" id="copyBtn">📋 Copy Link</button>
+
+            <a
+              href="#"
+              class="btn whatsapp-btn"
+              id="whatsappShare"
+              target="_blank"
+            >
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+                alt="WhatsApp"
+                class="whatsapp-icon"
+              />
+              Share
+            </a>
+          </div>
+
+          <button class="btn" id="createAnother">Create Another Link</button>
+        </div>
+      </div>
+
+      <!-- Valentine Popup Section -->
+      <div class="valentine-section" id="valentineSection">
+        <div class="valentine-content" id="valentineContent">
+          <div class="cat-container">
+            <div class="heart-decoration">💖</div>
+            <div class="cat-face">
+              <div class="cat-ear-left"></div>
+              <div class="cat-ear-right"></div>
+              <div class="cat-eyes">
+                <div class="cat-eye"></div>
+                <div class="cat-eye"></div>
+              </div>
+              <div class="cat-nose"></div>
+              <div class="cat-blush-left"></div>
+              <div class="cat-blush-right"></div>
+            </div>
+          </div>
+
+          <h2 class="valentine-title">
+            <span id="toNameDisplay">Hey there</span>, will you be my valentine?
+          </h2>
+
+          <div class="button-container">
+            <button class="valentine-btn yes-btn" id="yesBtn">Yes</button>
+            <button class="valentine-btn no-btn" id="noBtn">No</button>
+          </div>
+
+          <p class="shy-message">"No" seems a bit shy 😈</p>
+        </div>
+
+        <div class="success-message" id="successMessage">
+          <!-- Glitter Shower -->
+          <div class="glitter-container">
+            <div class="glitter"></div>
+            <div class="glitter"></div>
+            <div class="glitter"></div>
+            <div class="glitter"></div>
+            <div class="glitter"></div>
+            <div class="glitter"></div>
+            <div class="glitter"></div>
+            <div class="glitter"></div>
+            <div class="glitter"></div>
+            <div class="glitter"></div>
+            <div class="glitter"></div>
+            <div class="glitter"></div>
+            <div class="glitter"></div>
+            <div class="glitter"></div>
+            <div class="glitter"></div>
+            <div class="glitter"></div>
+            <div class="glitter"></div>
+            <div class="glitter"></div>
+            <div class="glitter"></div>
+            <div class="glitter"></div>
+          </div>
+
+          <!-- GIPHY Cute Hugging Cats Sticker -->
+          <div class="kissing-animation" id="kissingAnimation">
+            <img
+              src="{{ asset('assets/img/success.gif') }}"
+              alt="Cute hugging cats"
+            />
+          </div>
+
+          <h2 class="success-text">Yay! 💖 Best decision ever made 🎉</h2>
+          <p class="success-subtitle">
+            <span id="fromNameSuccess">They</span> will be so happy!
+          </p>
+        </div>
+      </div>
+      <!-- Footer -->
+      <div class="app-footer">
+        <p class="powered-text powered-inline">
+          Powered by
+          <span class="brand">
+            <img
+              src="{{ asset('assets/img/360events-logo.webp') }}"
+              style="max-width: 100px"
+            />
+          </span>
+        </p>
+
+        <a
+          href="https://360invites.com/digital-wedding-invites"
+          target="_blank"
+          class="wedding-btn"
+        >
+          💍 Create Wedding E-Invitation
+        </a>
+        <p class="powered-text powered-inline" style="margin-top: 10px">
+          Create elegant, fully customizable e-invites that make your special
+          day unforgettable for every guest.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      // Parse URL parameters
+      // Decode helper
+      function decodeData(encoded) {
+        return decodeURIComponent(escape(atob(encoded)));
+      }
+
+      // Check if this is a valentine link or generator page
+      if (window.location.hash) {
+        try {
+          const encoded = window.location.hash.substring(1); // remove #
+          const decoded = decodeData(encoded); // fromName|toName
+          const parts = decoded.split("|");
+
+          if (parts.length === 2) {
+            const fromName = parts[0];
+            const toName = parts[1];
+
+            // Show valentine section
+            document.getElementById("generatorSection").style.display = "none";
+            document.getElementById("valentineSection").style.display = "block";
+
+            // Set custom values
+            document.getElementById("toNameDisplay").textContent = toName;
+            document.getElementById("fromNameSuccess").textContent = fromName;
+
+            // Initialize moving No button
+            initializeNoButton();
+          }
+        } catch (err) {
+          console.log("Invalid or corrupted link");
+        }
+      } else {
+        // Show generator section
+        initializeGenerator();
+      }
+
+      function encodeData(text) {
+        return btoa(unescape(encodeURIComponent(text)));
+      }
+
+      // Generator functionality
+      function initializeGenerator() {
+        const form = document.getElementById("linkForm");
+        const generatedLinkDiv = document.getElementById("generatedLink");
+        const linkDisplay = document.getElementById("linkDisplay");
+        const copyBtn = document.getElementById("copyBtn");
+        const createAnotherBtn = document.getElementById("createAnother");
+
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+
+          const fromName = document.getElementById("fromName").value.trim();
+          const toName = document.getElementById("toName").value.trim();
+
+          const combined = `${fromName}|${toName}`;
+          const encoded = encodeData(combined);
+
+          const baseUrl = window.location.origin + window.location.pathname;
+          const link = `${baseUrl}#${encoded}`;
+
+          linkDisplay.textContent = link;
+          generatedLinkDiv.style.display = "block";
+          generatedLinkDiv.scrollIntoView({ behavior: "smooth" });
+        });
+
+        copyBtn.addEventListener("click", () => {
+          const link = linkDisplay.textContent;
+          navigator.clipboard.writeText(link).then(() => {
+            copyBtn.textContent = "✅ Copied!";
+            setTimeout(() => {
+              copyBtn.textContent = "📋 Copy Link";
+            }, 2000);
+          });
+        });
+
+        createAnotherBtn.addEventListener("click", () => {
+          form.reset();
+          generatedLinkDiv.style.display = "none";
+        });
+      }
+
+      // Valentine section functionality
+      function initializeNoButton() {
+        const noBtn = document.getElementById("noBtn");
+        const yesBtn = document.getElementById("yesBtn");
+        const valentineContent = document.getElementById("valentineContent");
+        const successMessage = document.getElementById("successMessage");
+
+        // Move No button on hover
+        noBtn.addEventListener("mouseenter", () => {
+          noBtn.classList.add("moving");
+
+          // Get viewport dimensions
+          const viewportWidth = window.innerWidth;
+          const viewportHeight = window.innerHeight;
+
+          // Get button dimensions
+          const btnWidth = noBtn.offsetWidth;
+          const btnHeight = noBtn.offsetHeight;
+
+          // Calculate safe random position (avoiding edges)
+          const maxX = viewportWidth - btnWidth - 20;
+          const maxY = viewportHeight - btnHeight - 20;
+
+          const randomX = Math.max(20, Math.random() * maxX);
+          const randomY = Math.max(20, Math.random() * maxY);
+
+          noBtn.style.left = randomX + "px";
+          noBtn.style.top = randomY + "px";
+        });
+
+        // Also trigger on touch for mobile
+        noBtn.addEventListener("touchstart", (e) => {
+          e.preventDefault();
+          const event = new Event("mouseenter");
+          noBtn.dispatchEvent(event);
+        });
+
+        // Handle Yes button click
+        yesBtn.addEventListener("click", () => {
+          valentineContent.style.display = "none";
+          successMessage.style.display = "block";
+
+          // Show kissing teddies animation with delay
+          setTimeout(() => {
+            document.getElementById("kissingAnimation").style.display = "block";
+          }, 300);
+        });
+
+        // Prevent No button click (just in case someone is fast)
+        noBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          const event = new Event("mouseenter");
+          noBtn.dispatchEvent(event);
+        });
+      }
+
+      document
+        .getElementById("whatsappShare")
+        .addEventListener("click", (e) => {
+          e.preventDefault();
+
+          const link = document.getElementById("linkDisplay").textContent;
+          const fromName =
+            document.getElementById("fromName").value || "Someone";
+
+          const text = [
+            "I made something special for you this Valentine’s Day 💖",
+            "Please check the link below 😊",
+            "",
+            link,
+            "",
+            `With love,`,
+            `${fromName} ❤️`,
+          ].join("\n");
+
+          const url = `whatsapp://send?text=${encodeURIComponent(text)}`;
+
+          // Open WhatsApp share
+          window.open(url, "_blank");
+        });
+    </script>
+    <script>
+      setInterval(() => {
+        const heart = document.createElement("div");
+        heart.className = "floating-heart";
+        heart.innerHTML = "💖";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = 4 + Math.random() * 4 + "s";
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 8000);
+      }, 600);
+    </script>
+  </body>
+</html>
